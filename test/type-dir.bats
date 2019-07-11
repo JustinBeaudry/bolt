@@ -64,7 +64,7 @@ teardown () {
 }
 
 @test "dir install: creates target directory and sets owner" {
-  [ $EUID -ne 0 ] && skip "test must be run with root priveleges"
+  [ $EUID -ne 0 ] && skip "test must be run with root privileges"
   run fn install $BATS_TMPDIR/dir/bar --owner nobody
   [ $status -eq $STATUS_OK ]
   owner=$(ls -ld $BATS_TMPDIR/dir/bar | awk '{print $3}')
@@ -72,7 +72,7 @@ teardown () {
 }
 
 @test "dir install: creates target directory and sets group" {
-  [ $EUID -ne 0 ] && skip "test must be run with root priveleges"
+  [ $EUID -ne 0 ] && skip "test must be run with root privileges"
   run fn install $BATS_TMPDIR/dir/bar --group nobody
   [ $status -eq $STATUS_OK ]
   owner=$(ls -ld $BATS_TMPDIR/dir/bar | awk '{print $4}')

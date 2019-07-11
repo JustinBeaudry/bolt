@@ -27,7 +27,7 @@
   [ $status -eq $STATUS_FAILED ]
 }
 
-@test "platform fn: eports Linux correctly" {
+@test "platform fn: exports Linux correctly" {
   skip_linux
   run platform "Linux"
   [ $status -eq $STATUS_OK ]

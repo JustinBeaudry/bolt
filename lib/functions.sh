@@ -17,7 +17,7 @@ arg() {
   echo "${kvp:${#key}+3}" | sed 's/ *$//'
 }
 
-# print ouput over same line
+# print output over same line
 print() {
   [ -z "$bolt_print_buffer" ] && let bolt_print_buffer=0
   local line=$*

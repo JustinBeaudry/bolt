@@ -1,11 +1,14 @@
-# [![Bolt](https://raw.githubusercontent.com/matthewhadley/bolt/master/assets/bolt-64.png)](https://github.com/matthewhadley/bolt) Bolt [![](https://travis-ci.org/matthewhadley/bolt.svg)](https://travis-ci.org/matthewhadley/bolt)
+# [![Bolt](https://raw.githubusercontent.com/JustinBeaudry/bolt/master/assets/bolt-64.png)](https://github.com/JustinBeaudry/bolt) Bolt
 
-Bolt is a bash-based DSL for making assertions about the state of a system.
+This is a fork of [https://github.com/matthewhadley/bolt][Matthew Hadley's Bolt].
 
-Bolt is a simpler version of [Bork](https://github.com/mattly/bork); less type functionality, fewer status values and no ability to convert configs into standalone scripts. Bolt was written as a means to manage my own systems.
-
-Bolt is written against Bash 3.2 and common unix utilities such as sed, awk and grep. It is designed to work on any UNIX-based system, and be aware of platform differences between BSD and GPL versions of unix utilities.
-
+Bolt is:
+ 
+  - a bash-based DSL for making assertions about the state of a system.
+  - a simpler version of [Bork](https://github.com/mattly/bork); less type functionality, fewer status values and no ability to convert configs into standalone scripts.
+  - written against Bash 3.2 and common unix utilities such as sed, awk and grep.
+  - designed to work on any UNIX-based system.
+  - aware of platform differences between BSD and GPL versions of unix utilities.
 
 ## Bolt Configs
 
@@ -17,12 +20,14 @@ ok github matthewhadley/scratch
 ok yum nano
 ```
 
-The declaration `ok` tells bolt that the following type (modified by any additional arguments) should be present. Bolt keeps no history of state - each bolt run is independent.
-
+The declaration `ok` tells bolt that the following type (modified by any additional arguments) should be present. 
+Bolt keeps no history of state - each bolt run is independent.
 
 ## Assertion Types
 
-Bolt assertions are scripts that are run by bolt. They are invoked with an `action` and the arguments provided to `ok`. The assertion should be able to respond to `desc`, `status`, `install` and `upgrade` requests with various status codes.
+Bolt assertions are scripts that are run by Bolt. 
+They are invoked with an `action` and the arguments provided to `ok`. 
+The assertion should be able to respond to `desc`, `status`, `install` and `upgrade` requests with various status codes.
 
 You can run `bolt types` to get a list of the assertion types and basic info about their usage and options.
 
@@ -57,13 +62,14 @@ assert presence, checksum, owner and permissions of a file
 
 * git
 assert presence and state of a git repo
-> git git@github.com:matthewhadley/bolt [arguments]
+> git git@github.com:JustinBeaudry/bolt [arguments]
+> git git@github.com:JustinBeaudry/bolt [arguments]
 --dir    target   destination dir
 --branch foo      git branch (defaults to master)
 
 * github
 interface for git type, using github user/repo combos
-> github matthewhadley/bolt [arguments as per git type]
+> github JustinBeaudry/bolt [arguments as per git type]
 
 * group
 assert presence of a unix group
@@ -102,9 +108,9 @@ could pull down and extract a release tar:
 #!/bin/bash
 
 # use latest bolt version
-BOLT_VERSION=$(curl -Ls https://raw.githubusercontent.com/matthewhadley/bolt/master/VERSION)
+BOLT_VERSION=$(curl -Ls https://raw.githubusercontent.com/JustinBeaudry/bolt/master/VERSION)
 
-curl -Ls https://github.com/matthewhadley/bolt/archive/${BOLT_VERSION}.tar.gz > bolt-${BOLT_VERSION}.tar.gz
+curl -Ls https://github.com/JustinBeaudry/bolt/archive/${BOLT_VERSION}.tar.gz > bolt-${BOLT_VERSION}.tar.gz
 tar xvzf bolt-${BOLT_VERSION}.tar.gz
 mv bolt-${BOLT_VERSION} /usr/local/lib/bolt
 ln -s /usr/local/lib/bolt/bin/bolt /usr/local/bin/bolt

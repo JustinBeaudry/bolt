@@ -66,4 +66,4 @@
 - move version into own file to open way for version checking
 
 # 0.0.1
-- intial release
+- initial release

@@ -19,7 +19,7 @@ teardown () {
   [ $status -eq $STATUS_FAILED_PRECONDITION ]
 }
 
-@test "symlink status: returns MISSING if sylimk is not present" {
+@test "symlink status: returns MISSING if symlink is not present" {
   run fn status $BATS_TMPDIR/symlink/dst/foo $BATS_TMPDIR/symlink/src/foo
   [ $status -eq $STATUS_MISSING ]
 }

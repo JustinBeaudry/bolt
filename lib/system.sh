@@ -29,9 +29,9 @@ case $platform in
   *) return 1 ;;
 esac
 
-# check for root priveleges
+# check for root privileges
 root() {
-  [ $EUID -ne 0 ] && echo "needs root priveleges" && return 1
+  [ $EUID -ne 0 ] && echo "needs root privileges" && return 1
   return 0
 }
 

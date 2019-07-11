@@ -13,12 +13,12 @@ skip_travis() {
 }
 
 skip_root() {
-  [ $EUID -ne 0 ] && skip "requires root priveleges"
+  [ $EUID -ne 0 ] && skip "requires root privileges"
   return 0
 }
 
 skip_user() {
-  [ $EUID -eq 0 ] && skip "requires normal user priveleges"
+  [ $EUID -eq 0 ] && skip "requires normal user privileges"
   return 0
 }
 

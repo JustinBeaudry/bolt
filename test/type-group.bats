@@ -11,7 +11,7 @@ fn() { . $BOLT_DIR/types/group.sh $*; }
 }
 
 @test "group status: returns FAILED_PRECONDITION if groupadd cmd is not present" {
-  platform "Linux" && skip "groupadd cmd avilable on Linux"
+  platform "Linux" && skip "groupadd cmd available on Linux"
   skip_root
   run fn status wheel
   [ $status -eq $STATUS_FAILED_PRECONDITION ]

@@ -65,7 +65,7 @@ teardown () {
 }
 
 @test "fetch install: creates target file and sets owner" {
-  [ $EUID -ne 0 ] && skip "test must be run with root priveleges"
+  [ $EUID -ne 0 ] && skip "test must be run with root privileges"
   run fn install $BATS_TMPDIR/fetch/owner https://raw.githubusercontent.com/matthewhadley/bolt/master/VERSION --owner nobody
   [ $status -eq $STATUS_OK ]
   owner=$(ls -l $BATS_TMPDIR/fetch/owner | awk '{print $3}')
@@ -73,7 +73,7 @@ teardown () {
 }
 
 @test "fetch install: creates target file and sets group" {
-  [ $EUID -ne 0 ] && skip "test must be run with root priveleges"
+  [ $EUID -ne 0 ] && skip "test must be run with root privileges"
   run fn install $BATS_TMPDIR/fetch/group https://raw.githubusercontent.com/matthewhadley/bolt/master/VERSION --group nobody
   [ $status -eq $STATUS_OK ]
   group=$(ls -l $BATS_TMPDIR/fetch/group | awk '{print $4}')

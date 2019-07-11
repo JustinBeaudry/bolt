@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BashSupportProjectSettings">
+    <option name="autocompleteBuiltinVars" value="true" />
+    <option name="formatterEnabled" value="true" />
+    <option name="globalFunctionVarDefs" value="true" />
+    <option name="globalVariables">
+      <set>
+        <option value="STATUS_FAILED" />
+        <option value="STATUS_OK" />
+        <option value="STATUS_UNPRIVILEGED" />
+        <option value="STATUS_UNSUPPORTED" />
+        <option value="bolt_print_buffer" />
+        <option value="status" />
+      </set>
+    </option>
+  </component>
+</project>
